@@ -26,7 +26,7 @@ int show(FILE **file, int i, int winWidth) //show the newest scores using recurs
 void game_scores(int winWidth, int winHeight)
 {
     al_init();
-    al_set_new_window_position(10, 10);
+    al_set_new_window_position(100, 100);
     al_set_new_display_flags(ALLEGRO_RESIZABLE | ALLEGRO_WINDOWED );
     al_set_window_title(window_scores, "Arkanoid");
 
