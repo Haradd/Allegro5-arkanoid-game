@@ -2,7 +2,8 @@
 #define GAME_H_INCLUDED
 #define True  1
 #define False 0
-
+#define COLS  13
+#define ROWS  7
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,13 +11,9 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
-
 #include "keyboard.h"
 #include "save.h"
-
-
 #include "colors.h"
-
 
 ALLEGRO_DISPLAY *window_game;
 ALLEGRO_EVENT_QUEUE *eventQueue_game;
@@ -29,15 +26,12 @@ ALLEGRO_BITMAP *block_red_bitmap;
 ALLEGRO_BITMAP *block_green_bitmap;
 ALLEGRO_BITMAP *block_blue_bitmap;
 ALLEGRO_BITMAP *block_orange_bitmap;
-
 ALLEGRO_FONT *font_caption;
 ALLEGRO_FONT *font_time;
-
 
 enum key {left, right};
 enum colision{none, horizontal, vertical};
 enum angle{no, angle_large, angle_normal};
-
 
 struct Ball{
     int x;
@@ -66,8 +60,6 @@ struct Block{
 
 };
 
-
-
 int done;
 int redraw;
 int saving;
@@ -77,6 +69,5 @@ int won;
 char nick[25], *message;
 
 void game(int level, int winWidth, int winHeight, float run_time);
-
 
 #endif // GAME_H_INCLUDED

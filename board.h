@@ -10,10 +10,10 @@
 
 
 
-void make_blocks_easy(struct Block block[13][10]);
-void make_blocks_medium(struct Block block[13][10]);
-void make_blocks_hard(struct Block block[13][10]);
-void draw_blocks(struct Block block[13][10]);
+void make_blocks_easy(struct Block block[COLS][ROWS]);
+void make_blocks_medium(struct Block block[COLS][ROWS]);
+void make_blocks_hard(struct Block block[COLS][ROWS]);
+void draw_blocks(struct Block block[COLS][ROWS]);
 
 
 #endif // BOARD_H_INCLUDED

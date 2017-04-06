@@ -5,8 +5,6 @@
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
 
-
-
 #include "menu.h"
 #include "game.h"
 #include "keyboard.h"

@@ -7,6 +7,7 @@ int main()
     done = False;
     menu_option = 1;
 
+    //menu pointer
     pointer_x = winWidth/20;
     pointer_y = 335;
 

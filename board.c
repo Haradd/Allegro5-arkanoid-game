@@ -1,14 +1,14 @@
 #include "board.h"
 
 
-void make_blocks_easy(struct Block block[13][10])
+void make_blocks_easy(struct Block block[COLS][ROWS])
 {
     srand(time(NULL));
     int i = 0;
-    for(i; i<13; i++)
+    for(i; i<COLS; i++)
     {
         int j = 0;
-        for(j; j<7; j++)
+        for(j; j<ROWS; j++)
         {
             block[i][j].x = 20 + (i*76);
             block[i][j].y = 50 + (j*30);
@@ -21,14 +21,14 @@ void make_blocks_easy(struct Block block[13][10])
 
 }
 
-void make_blocks_medium(struct Block block[13][10])
+void make_blocks_medium(struct Block block[COLS][ROWS])
 {
     srand(time(NULL));
     int i = 0;
-    for(i; i<13; i++)
+    for(i; i<COLS; i++)
     {
         int j = 0;
-        for(j; j<7; j++)
+        for(j; j<ROWS; j++)
         {
             block[i][j].x = 20 + (i*76);
             block[i][j].y = 50 + (j*30);
@@ -51,14 +51,14 @@ void make_blocks_medium(struct Block block[13][10])
     }
 }
 
-void make_blocks_hard(struct Block block[13][10])
+void make_blocks_hard(struct Block block[COLS][ROWS])
 {
     srand(time(NULL));
     int i = 0;
-    for(i; i<13; i++)
+    for(i; i<COLS; i++)
     {
         int j = 0;
-        for(j; j<7; j++)
+        for(j; j<ROWS; j++)
         {
             block[i][j].x = 20 + (i*76);
             block[i][j].y = 50 + (j*30);
@@ -80,13 +80,13 @@ void make_blocks_hard(struct Block block[13][10])
 
     }
 }
-void draw_blocks(struct Block block[13][10])
+void draw_blocks(struct Block block[COLS][ROWS])
 {
     int i = 0;
-    for(i; i<13; i++)
+    for(i; i<COLS; i++)
     {
         int j = 0;
-        for(j; j<7; j++)
+        for(j; j<ROWS; j++)
         {
             if (block[i][j].exists)
             {

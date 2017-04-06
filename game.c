@@ -66,7 +66,7 @@ void game(int level, int winWidth, int winHeight, float run_time)
     // events and timing
     eventQueue_game = al_create_event_queue();
     move_timer = al_create_timer(1.0 / (200 + level*50)); // depend on level
-    draw_timer = al_create_timer(1.0 / 150);
+    draw_timer = al_create_timer(1.0 / 120);
 
     al_register_event_source(eventQueue_game, al_get_display_event_source(window_game));
     al_register_event_source(eventQueue_game, al_get_timer_event_source(move_timer));
@@ -95,7 +95,7 @@ void game(int level, int winWidth, int winHeight, float run_time)
 
     al_draw_bitmap(bar_bitmap, winWidth/2, winHeight + 50, 0);
 
-    struct Block block[13][10];
+    struct Block block[COLS][ROWS];
 
     switch( level )
     {
@@ -155,10 +155,10 @@ void game(int level, int winWidth, int winHeight, float run_time)
 
                 int change_dir = True;
                 int i = 0;
-                for(i; i<13; i++)
+                for(i; i<COLS; i++)
                 {
                     int j = 0;
-                    for(j; j<7; j++)
+                    for(j; j<ROWS; j++)
                     {
                         if (block[i][j].exists)
                         {
@@ -179,7 +179,8 @@ void game(int level, int winWidth, int winHeight, float run_time)
                                 else
                                 {
                                     block[i][j].strong = False;
-                                    block[i][j].color = (rand()%4) +1;
+                                    block[i][j].color = (rand() % 4) + 1;
+                                    change_dir = False;
                                 }
 
                             }
@@ -207,7 +208,7 @@ void game(int level, int winWidth, int winHeight, float run_time)
                         }
                     }
                 }
-                if (destroyed_blocks == 91)
+                if (destroyed_blocks == COLS * ROWS)
                 {
                     won = True;
                     done = True;
